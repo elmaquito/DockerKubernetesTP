@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    restart: unless-stopped
+    hostname: gitlab.local
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost:8929'
+    ports:
+      - "8929:8929"
+      - "2289:22"
+    volumes:
+      - gitlab-config:/etc/gitlab
+      - gitlab-logs:/var/log/gitlab
+      - gitlab-data:/var/opt/gitlab
+
+# Optional runner and registry can be added; for small demos use GitLab's built-in registry
+volumes:
+  gitlab-config:
+  gitlab-logs:
+  gitlab-data:
