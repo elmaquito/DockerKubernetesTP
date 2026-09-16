@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   db:
     image: postgres:15
@@ -69,10 +68,30 @@ services:
     networks:
       - tp08_net
 
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    restart: unless-stopped
+    hostname: gitlab.local
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost:8929'
+    ports:
+      - "8929:8929"
+      - "2289:22"
+    volumes:
+      - gitlab-config:/etc/gitlab
+      - gitlab-logs:/var/log/gitlab
+      - gitlab-data:/var/opt/gitlab
+    networks:
+      - tp08_net
+
 volumes:
   db_data:
   grafana_data:
   portainer_data:
+  gitlab-config:
+  gitlab-logs:
+  gitlab-data:
 
 networks:
   tp08_net:
