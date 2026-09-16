@@ -1,0 +1,39 @@
+﻿{
+    "status":  "success",
+    "data":  {
+                 "activeTargets":  [
+                                       {
+                                           "discoveredLabels":  {
+                                                                    "__address__":  "backend:3000",
+                                                                    "__always_scrape_classic_histograms__":  "false",
+                                                                    "__convert_classic_histograms_to_nhcb__":  "false",
+                                                                    "__metrics_path__":  "/metrics",
+                                                                    "__scheme__":  "http",
+                                                                    "__scrape_interval__":  "15s",
+                                                                    "__scrape_native_histograms__":  "false",
+                                                                    "__scrape_timeout__":  "10s",
+                                                                    "job":  "backend"
+                                                                },
+                                           "labels":  {
+                                                          "instance":  "backend:3000",
+                                                          "job":  "backend"
+                                                      },
+                                           "scrapePool":  "backend",
+                                           "scrapeUrl":  "http://backend:3000/metrics",
+                                           "globalUrl":  "http://backend:3000/metrics",
+                                           "lastError":  "",
+                                           "lastScrape":  "2026-09-16T09:44:54.989173678Z",
+                                           "lastScrapeDuration":  0.011695575,
+                                           "health":  "up",
+                                           "scrapeInterval":  "15s",
+                                           "scrapeTimeout":  "10s"
+                                       }
+                                   ],
+                 "droppedTargets":  [
+
+                                    ],
+                 "droppedTargetCounts":  {
+                                             "backend":  0
+                                         }
+             }
+}
